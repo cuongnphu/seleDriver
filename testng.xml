@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite thread-count="1" parallel="tests" name="GoSELL Automation Testing" verbose="1">
+
+    <test name="Login Test" preserve-order="true">
+        <classes>
+            <class name="com.cuong.GosellTest" />
+        </classes>
+    </test>
+
+</suite>
