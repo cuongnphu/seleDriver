@@ -13,13 +13,9 @@ public class Gosell {
         WebDriver webDriver = new ChromeDriver();
         webDriver.get("https://admin.unisell.vn/login");
         webDriver.manage().window().maximize();
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        webDriver.close();
-        webDriver.quit();
+
+//        webDriver.close();
+//        webDriver.quit();
 
     }
 }
