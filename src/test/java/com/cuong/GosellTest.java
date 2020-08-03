@@ -8,11 +8,13 @@ import org.testng.annotations.Test;
 
 public class GosellTest {
 
-
     @Test
     public void test(){
-        WebDriverManager.chromedriver().setup();
+//        WebDriverManager.chromedriver().setup();
+
+        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/driver/chromedriver");
         WebDriver webDriver = new ChromeDriver();
+
         webDriver.get("https://admin.unisell.vn/login");
         webDriver.manage().window().maximize();
         try {
@@ -23,7 +25,5 @@ public class GosellTest {
         webDriver.close();
         webDriver.quit();
     }
-
-
 
 }
