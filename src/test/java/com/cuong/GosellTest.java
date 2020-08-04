@@ -6,6 +6,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.Test;
 
+import java.util.Collections;
+
 
 public class GosellTest {
 
@@ -14,14 +16,23 @@ public class GosellTest {
 //        WebDriverManager.chromedriver().setup();
 
         System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/driver/chromedriver");
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("start-maximized"); // open Browser in maximized mode
-        options.addArguments("disable-infobars"); // disabling infobars
-        options.addArguments("--disable-extensions"); // disabling extensions
-        options.addArguments("--disable-gpu"); // applicable to windows os only
-        options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
-        options.addArguments("--no-sandbox"); // Bypass OS security model
-        WebDriver webDriver = new ChromeDriver(options);
+
+//        ChromeOptions options = new ChromeOptions();
+//        options.addArguments("start-maximized"); // open Browser in maximized mode
+//        options.addArguments("disable-infobars"); // disabling infobars
+//        options.addArguments("--disable-extensions"); // disabling extensions
+//        options.addArguments("--disable-gpu"); // applicable to windows os only
+//        options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
+//        options.addArguments("--no-sandbox"); // Bypass OS security model
+
+
+        ChromeOptions opt = new ChromeOptions();
+        opt.setBinary("/usr/bin/google-chrome");  //chrome binary location specified here
+        opt.addArguments("start-maximized");
+        opt.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
+        opt.setExperimentalOption("useAutomationExtension", false);
+
+        WebDriver webDriver = new ChromeDriver(opt);
 
         webDriver.get("https://admin.unisell.vn/login");
         webDriver.manage().window().maximize();
