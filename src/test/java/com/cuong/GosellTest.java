@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.Test;
 
 import java.util.Collections;
+import java.util.HashMap;
 
 
 public class GosellTest {
@@ -17,7 +18,7 @@ public class GosellTest {
 
         System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/driver/chromedriver");
 
-//        ChromeOptions options = new ChromeOptions();
+        ChromeOptions options = new ChromeOptions();
 //        options.addArguments("start-maximized"); // open Browser in maximized mode
 //        options.addArguments("disable-infobars"); // disabling infobars
 //        options.addArguments("--disable-extensions"); // disabling extensions
@@ -26,13 +27,23 @@ public class GosellTest {
 //        options.addArguments("--no-sandbox"); // Bypass OS security model
 
 
-        ChromeOptions opt = new ChromeOptions();
-        opt.setBinary("/usr/bin/google-chrome");  //chrome binary location specified here
-        opt.addArguments("start-maximized");
-        opt.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
-        opt.setExperimentalOption("useAutomationExtension", false);
+//        ChromeOptions opt = new ChromeOptions();
+//        opt.setBinary("/usr/bin/google-chrome");  //chrome binary location specified here
+//        opt.addArguments("start-maximized");
+//        opt.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
+//        opt.setExperimentalOption("useAutomationExtension", false);
 
-        WebDriver webDriver = new ChromeDriver(opt);
+//        String downloadFilepath = System.getProperty("downloadFilepath");
+//        HashMap<String, Object> chromePrefs = new HashMap<>();
+//        chromePrefs.put("profile.default_content_settings.popups", 0);
+//        chromePrefs.put("download.default_directory", downloadFilepath);
+//        options.setExperimentalOption("prefs", chromePrefs);
+        options.addArguments("--no-sandbox");
+        options.addArguments("--headless"); //should be enabled for Jenkins
+        options.addArguments("--disable-dev-shm-usage"); //should be enabled for Jenkins
+        options.addArguments("--window-size=1920x1080"); //should be enabled for Jenkins
+
+        WebDriver webDriver = new ChromeDriver(options);
 
         webDriver.get("https://admin.unisell.vn/login");
         webDriver.manage().window().maximize();
