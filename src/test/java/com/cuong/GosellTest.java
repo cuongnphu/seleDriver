@@ -28,7 +28,7 @@ public class GosellTest {
 
 
 //        ChromeOptions opt = new ChromeOptions();
-//        opt.setBinary("/usr/bin/google-chrome");  //chrome binary location specified here
+
 //        opt.addArguments("start-maximized");
 //        opt.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
 //        opt.setExperimentalOption("useAutomationExtension", false);
@@ -42,6 +42,8 @@ public class GosellTest {
 //        options.addArguments("--headless"); //should be enabled for Jenkins
         options.addArguments("--disable-dev-shm-usage"); //should be enabled for Jenkins
 //        options.addArguments("--window-size=1920x1080"); //should be enabled for Jenkins
+
+        options.setBinary("/usr/bin/google-chrome");  //chrome binary location specified here
 
         WebDriver webDriver = new ChromeDriver(options);
 
