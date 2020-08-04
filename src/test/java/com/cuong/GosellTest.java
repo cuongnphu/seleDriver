@@ -59,6 +59,7 @@ public class GosellTest {
 //        options.addArguments("--headless");
         options.addArguments("--window-size=1366,768");
         options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage"); //should be enabled for Jenkins
 
 
         WebDriver webDriver = new ChromeDriver(options);
