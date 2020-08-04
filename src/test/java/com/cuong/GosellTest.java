@@ -17,7 +17,7 @@ public class GosellTest {
 
     @Test
     public void test(){
-        WebDriverManager.chromedriver().setup();
+//        WebDriverManager.chromedriver().setup();
 
 //        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/driver/chromedriver");
 
@@ -62,6 +62,8 @@ public class GosellTest {
 //        options.addArguments("--no-sandbox");
 //        options.addArguments("--disable-dev-shm-usage"); //should be enabled for Jenkins
 
+
+        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\driver\\chromedriver.exe");
 
         WebDriver webDriver = new ChromeDriver();
 
