@@ -4,6 +4,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.Test;
 
 import java.util.Collections;
@@ -18,7 +20,7 @@ public class GosellTest {
 
         System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/driver/chromedriver");
 
-        ChromeOptions options = new ChromeOptions();
+//        ChromeOptions options = new ChromeOptions();
 //        options.addArguments("start-maximized"); // open Browser in maximized mode
 //        options.addArguments("disable-infobars"); // disabling infobars
 //        options.addArguments("--disable-extensions"); // disabling extensions
@@ -40,12 +42,24 @@ public class GosellTest {
 //        options.setExperimentalOption("prefs", chromePrefs);
 //        options.addArguments("--no-sandbox");
 //        options.addArguments("--headless"); //should be enabled for Jenkins
-        options.addArguments("--disable-dev-shm-usage"); //should be enabled for Jenkins
-//        options.addArguments("--window-size=1920x1080"); //should be enabled for Jenkins
+//        options.addArguments("--disable-dev-shm-usage"); //should be enabled for Jenkins
+////        options.addArguments("--window-size=1920x1080"); //should be enabled for Jenkins
+//
+//        options.addArguments("--remote-debugging-port=9222");
+////        options.setHeadless(true);
+//        options.setBinary("/usr/bin/google-chrome");  //chrome binary location specified here
 
-        options.addArguments("--remote-debugging-port=9222");
-//        options.setHeadless(true);
-        options.setBinary("/usr/bin/google-chrome");  //chrome binary location specified here
+        ChromeOptions options = new ChromeOptions();
+        DesiredCapabilities cap = DesiredCapabilities.chrome();
+        cap.setJavascriptEnabled(true);
+        cap.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
+        cap.setCapability(ChromeOptions.CAPABILITY, options);
+
+        options.addArguments("--start-maximized");
+//        options.addArguments("--headless");
+        options.addArguments("--window-size=1366,768");
+        options.addArguments("--no-sandbox");
+
 
         WebDriver webDriver = new ChromeDriver(options);
 
