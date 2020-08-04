@@ -16,9 +16,9 @@ public class GosellTest {
 
     @Test
     public void test(){
-//        WebDriverManager.chromedriver().setup();
+        WebDriverManager.chromedriver().setup();
 
-        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/driver/chromedriver");
+//        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/driver/chromedriver");
 
 //        ChromeOptions options = new ChromeOptions();
 //        options.addArguments("start-maximized"); // open Browser in maximized mode
@@ -49,20 +49,20 @@ public class GosellTest {
 ////        options.setHeadless(true);
 //        options.setBinary("/usr/bin/google-chrome");  //chrome binary location specified here
 
-        ChromeOptions options = new ChromeOptions();
-        DesiredCapabilities cap = DesiredCapabilities.chrome();
-        cap.setJavascriptEnabled(true);
-        cap.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
-        cap.setCapability(ChromeOptions.CAPABILITY, options);
+//        ChromeOptions options = new ChromeOptions();
+//        DesiredCapabilities cap = DesiredCapabilities.chrome();
+//        cap.setJavascriptEnabled(true);
+//        cap.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
+//        cap.setCapability(ChromeOptions.CAPABILITY, options);
+//
+//        options.addArguments("--start-maximized");
+////        options.addArguments("--headless");
+//        options.addArguments("--window-size=1366,768");
+//        options.addArguments("--no-sandbox");
+//        options.addArguments("--disable-dev-shm-usage"); //should be enabled for Jenkins
 
-        options.addArguments("--start-maximized");
-//        options.addArguments("--headless");
-        options.addArguments("--window-size=1366,768");
-        options.addArguments("--no-sandbox");
-        options.addArguments("--disable-dev-shm-usage"); //should be enabled for Jenkins
 
-
-        WebDriver webDriver = new ChromeDriver(options);
+        WebDriver webDriver = new ChromeDriver();
 
         webDriver.get("https://admin.unisell.vn/login");
         webDriver.manage().window().maximize();
