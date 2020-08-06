@@ -24,7 +24,7 @@ public class GosellTest {
          String pass = "input#password";
 //        WebDriverManager.chromedriver().setup();
 
-//        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/driver/chromedriver");
+        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/driver/chromedriver");
 
 //        ChromeOptions options = new ChromeOptions();
 //        options.addArguments("start-maximized"); // open Browser in maximized mode
@@ -35,7 +35,7 @@ public class GosellTest {
 //        options.addArguments("--no-sandbox"); // Bypass OS security model
 
 
-        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\driver\\chromedriver.exe");
+//        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\driver\\chromedriver.exe");
 
         WebDriver webDriver = new ChromeDriver();
 
