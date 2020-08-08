@@ -2,7 +2,7 @@ package com.cuong;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+//import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.Test;
@@ -25,9 +25,9 @@ public class GosellTest {
 
         ChromeOptions chromeOptions = new ChromeOptions();
 
-        chromeOptions.addArguments("--headless");
+//        chromeOptions.addArguments("--headless");
 
-        WebDriver webDriver = new ChromeDriver(chromeOptions);
+        ChromeDriver webDriver = new ChromeDriver(chromeOptions);
 
         webDriver.get("https://admin.unisell.vn/login");
         webDriver.manage().window().maximize();
