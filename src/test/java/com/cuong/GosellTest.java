@@ -27,6 +27,8 @@ public class GosellTest {
 
         WebDriver webDriver = new ChromeDriver(chromeOptions);
 
+        webDriver.navigate().to("https://admin.unisell.vn/login");
+
         webDriver.get("https://admin.unisell.vn/login");
         webDriver.manage().window().maximize();
 
