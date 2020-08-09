@@ -22,12 +22,8 @@ public class GosellTest {
 //        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/driver/chromedriver");
 //        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\driver\\chromedriver.exe");
 
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--headless");
 
-        WebDriver webDriver = new ChromeDriver(chromeOptions);
-
-        webDriver.navigate().to("https://admin.unisell.vn/login");
+        WebDriver webDriver = new ChromeDriver();
 
         webDriver.get("https://admin.unisell.vn/login");
         webDriver.manage().window().maximize();
