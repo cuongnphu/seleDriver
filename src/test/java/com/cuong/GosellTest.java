@@ -16,13 +16,13 @@ public class GosellTest {
         String useName = "input#username";
         String pass = "input#password";
 
-        WebDriverManager.firefoxdriver().setup();
+        WebDriverManager.chromedriver().setup();
 
 //        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/driver/chromedriver");
 //        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\driver\\chromedriver.exe");
 
 
-        WebDriver webDriver = new FirefoxDriver();
+        WebDriver webDriver = new ChromeDriver();
 
         webDriver.get("https://admin.unisell.vn/login");
         webDriver.manage().window().maximize();
@@ -31,6 +31,9 @@ public class GosellTest {
         webDriver.findElement(By.cssSelector(useName)).sendKeys("gofree.stg@mailinator.com");
         webDriver.findElement(By.cssSelector(pass)).sendKeys("gofree.stg@mailinator.com");
 
+
+        webDriver.close();
+        webDriver.quit();
 
     }
 
